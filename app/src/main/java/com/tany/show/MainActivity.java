@@ -56,5 +56,6 @@ public class MainActivity extends AppCompatActivity {
         //5 介绍线程，即停止线程的消息循环
         mHandlerThread.quit();
 
+
     }
 }
