@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 23
     buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.tany.show"
         minSdkVersion 22
-        targetSdkVersion 26
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
 //        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -29,9 +29,6 @@ dependencies {
 }
 
 
-
-
-
 //preBuild {
 //
 //    doLast {
@@ -51,3 +48,4 @@ dependencies {
 //        }
 //    }
 //}
+

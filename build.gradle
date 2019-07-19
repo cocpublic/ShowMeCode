@@ -2,6 +2,9 @@
 
 buildscript {
     repositories {
+        maven {
+            url 'http://172.20.90.31:8083/repository/group_android/'
+        }
         google()
         jcenter()
         
@@ -17,6 +20,9 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url 'http://172.20.90.31:8083/repository/group_android/'
+        }
         google()
         jcenter()
 

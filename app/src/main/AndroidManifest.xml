@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.StartActDemoActivity"></activity>
+        <activity android:name=".handler.HandlerThreadDemoActivity"></activity>
+        <activity android:name=".activity.StartActDemoActivity" />
         <activity android:name=".recycleview.RecycleViewDemoActivity" />
         <activity android:name=".handler.HandlerDemoActivity" />
         <activity android:name=".MainActivity">
