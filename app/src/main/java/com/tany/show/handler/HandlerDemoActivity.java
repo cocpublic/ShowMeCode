@@ -13,10 +13,10 @@ import com.tany.show.R;
 public class HandlerDemoActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_handler_demo);
-        final Handler handler = new Handler();
+        this.setContentView(R.layout.activity_handler_demo);
+        Handler handler = new Handler();
         Looper.prepare();
 
         handler.sendEmptyMessageDelayed(0, 1000);

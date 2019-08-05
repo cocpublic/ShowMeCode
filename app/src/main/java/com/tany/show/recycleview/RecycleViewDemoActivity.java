@@ -16,28 +16,28 @@ public class RecycleViewDemoActivity extends AppCompatActivity {
     private MultipleItemAdapter adapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycle_view_demo);
-        initView();
+        this.setContentView(R.layout.activity_recycle_view_demo);
+        this.initView();
     }
 
     private void initView() {
-        rvContent = findViewById(R.id.rv_content);
+        this.rvContent = findViewById(R.id.rv_content);
 
         //设置layoutManager
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        rvContent.setLayoutManager(layoutManager);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        this.rvContent.setLayoutManager(layoutManager);
 
 
         //设置adapter
-        adapter = new MultipleItemAdapter(this);
-        rvContent.setAdapter(adapter);
+        this.adapter = new MultipleItemAdapter(this);
+        this.rvContent.setAdapter(this.adapter);
 
         //添加数据并且刷新adapter
 
-        List<String> list = new ArrayList<>();
-        adapter.addAll(list);
-        adapter.notifyDataSetChanged();
+        final List<String> list = new ArrayList<>();
+        this.adapter.addAll(list);
+        this.adapter.notifyDataSetChanged();
     }
 }

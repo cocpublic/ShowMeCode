@@ -6,10 +6,10 @@ package com.tany.show.thread;
 public class ThreadLocalDemo {
 
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
-        ThreadLocal<String> localName = new ThreadLocal<>();
+        final ThreadLocal<String> localName = new ThreadLocal<>();
         localName.set("demo");
-        String name = localName.get();
+        final String name = localName.get();
     }
 }

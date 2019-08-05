@@ -19,48 +19,48 @@ public class MultipleItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private final Context mContext;
     private ArrayList<String> mTitles;
 
-    public MultipleItemAdapter(final Context context) {
-        this.mContext = context;
-        this.mLayoutInflater = LayoutInflater.from(context);
-        this.mTitles = new ArrayList<>();
+    public MultipleItemAdapter(Context context) {
+        mContext = context;
+        mLayoutInflater = LayoutInflater.from(context);
+        mTitles = new ArrayList<>();
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == MultipleItemAdapter.ITEM_TYPE.ITEM_TYPE_IMAGE.ordinal()) {
-            return new MultipleItemAdapter.ImageViewHolder(this.mLayoutInflater.inflate(R.layout.item_image, parent, false));
+            return new MultipleItemAdapter.ImageViewHolder(mLayoutInflater.inflate(R.layout.item_image, parent, false));
         } else {
-            return new MultipleItemAdapter.TextViewHolder(this.mLayoutInflater.inflate(R.layout.item_text, parent, false));
+            return new MultipleItemAdapter.TextViewHolder(mLayoutInflater.inflate(R.layout.item_text, parent, false));
         }
     }
 
     @Override
-    public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof MultipleItemAdapter.TextViewHolder) {
-            ((MultipleItemAdapter.TextViewHolder) holder).mTextView.setText(this.mTitles.get(position));
+            ((MultipleItemAdapter.TextViewHolder) holder).mTextView.setText(mTitles.get(position));
         } else if (holder instanceof MultipleItemAdapter.ImageViewHolder) {
-            ((MultipleItemAdapter.ImageViewHolder) holder).mTextView.setText(this.mTitles.get(position));
+            ((MultipleItemAdapter.ImageViewHolder) holder).mTextView.setText(mTitles.get(position));
         }
     }
 
     @Override
-    public int getItemViewType(final int position) {
+    public int getItemViewType(int position) {
         return position % 2 == 0 ? MultipleItemAdapter.ITEM_TYPE.ITEM_TYPE_IMAGE.ordinal() : MultipleItemAdapter.ITEM_TYPE.ITEM_TYPE_TEXT.ordinal();
     }
 
     @Override
     public int getItemCount() {
-        if (this.mTitles == null) return 0;
-        else return this.mTitles.size();
+        if (mTitles == null) return 0;
+        else return mTitles.size();
     }
 
-    public void addAll(final List<String> list) {
-        if (this.mTitles != null) {
-            this.mTitles.clear();
+    public void addAll(List<String> list) {
+        if (mTitles != null) {
+            mTitles.clear();
         } else {
-            this.mTitles = new ArrayList<>();
+            mTitles = new ArrayList<>();
         }
-        this.mTitles.addAll(list);
+        mTitles.addAll(list);
     }
 
     public enum ITEM_TYPE {
@@ -71,7 +71,7 @@ public class MultipleItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public static class TextViewHolder extends RecyclerView.ViewHolder {
         TextView mTextView;
 
-        TextViewHolder(final View view) {
+        TextViewHolder(View view) {
             super(view);
         }
     }
@@ -80,7 +80,7 @@ public class MultipleItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         TextView mTextView;
         ImageView mImageView;
 
-        ImageViewHolder(final View view) {
+        ImageViewHolder(View view) {
             super(view);
         }
     }
